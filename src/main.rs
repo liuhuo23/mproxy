@@ -1,13 +1,11 @@
-mod cli;
 mod service;
 mod socks5;
 use clap::Parser;
 use log;
 use service::Service;
 async fn run_main() {
-    let args = cli::Args::parse();
-    log::debug!("代理地址为：{}:{}", args.host, args.port);
-    let mut service = Service::new(args.host, args.port);
+    let mut service = Service::parse();
+    log::debug!("代理地址为：{}:{}", service.host, service.port);
     service.run().await;
 }
 

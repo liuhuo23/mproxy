@@ -436,6 +436,9 @@ dependencies = [
  "clap",
  "log",
  "log4rs",
+ "rustls",
+ "rustls-pemfile",
+ "rustls-pki-types",
  "tokio",
  "tokio-rustls",
  "webparse",
@@ -609,6 +612,16 @@ dependencies = [
  "rustls-webpki",
  "subtle",
  "zeroize",
+]
+
+[[package]]
+name = "rustls-pemfile"
+version = "2.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "3c333bb734fcdedcea57de1602543590f545f127dc8b533324318fd492c5c70b"
+dependencies = [
+ "base64",
+ "rustls-pki-types",
 ]
 
 [[package]]
